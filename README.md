@@ -1,4 +1,4 @@
-# Multi Object Tracking with DeepSORT
+# Multi-Object Tracking with DeepSORT
 
 ## Problem Statement
 
