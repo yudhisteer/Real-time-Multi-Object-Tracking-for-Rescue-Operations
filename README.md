@@ -23,10 +23,15 @@
 <a name="ha"></a>
 ## 3. The Hungarian Algorithm
 
+![Hungarian drawio (1)](https://github.com/yudhisteer/Multi-Object-Tracking-with-Deep-SORT/assets/59663734/38d83258-89c1-424a-ad84-8ec151d62090)
+
+----------------
 
 ## References
 1. https://arshren.medium.com/hungarian-algorithm-6cde8c4065a3
 2. https://www.thinkautonomous.ai/blog/hungarian-algorithm/
 3. https://medium.com/augmented-startups/deepsort-deep-learning-applied-to-object-tracking-924f59f99104
 4. https://www.youtube.com/watch?v=QtAYgtBnhws&ab_channel=DynamicVisionandLearningGroup
-5. https://www.youtube.com/watch?v=BLRSIwal7Go&list=PL2zRqk16wsdoYzrWStffqBAoUY8XdvatV&index=12&ab_channel=FirstPrinciplesofComputerVision
+5. https://www.youtube.com/watch?app=desktop&v=ezSx8OyBZVc&ab_channel=ShokoufehMirzaei
+6. https://brilliant.org/wiki/hungarian-matching/
+7. https://www.youtube.com/watch?v=BLRSIwal7Go&list=PL2zRqk16wsdoYzrWStffqBAoUY8XdvatV&index=12&ab_channel=FirstPrinciplesofComputerVision
