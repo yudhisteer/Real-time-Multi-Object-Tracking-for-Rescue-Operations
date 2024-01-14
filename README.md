@@ -25,6 +25,8 @@
 
 ![Hungarian drawio (1)](https://github.com/yudhisteer/Multi-Object-Tracking-with-Deep-SORT/assets/59663734/38d83258-89c1-424a-ad84-8ec151d62090)
 
+<img width="457" alt="image" src="https://github.com/yudhisteer/Multi-Object-Tracking-with-Deep-SORT/assets/59663734/c72559b1-7ffe-4131-a05d-4b82239f433a">
+
 ----------------
 
 ## References
