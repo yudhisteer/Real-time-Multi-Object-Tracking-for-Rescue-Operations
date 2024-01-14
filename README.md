@@ -6,17 +6,22 @@
 
 ## Table of Contents
 1. [Object Detection](#od)
-2. [The Hungarian Algorithm](#ha)
-3. [SORT: Simple Online Realtime Tracking](#s)
-4. [Deep SORT: Simple Online and Realtime Tracking with a Deep Association Metric](#ds)
+2. [Object Tracking](#ot)
+3. [The Hungarian Algorithm](#ha)
+4. [SORT: Simple Online Realtime Tracking](#s)
+5. [Deep SORT: Simple Online and Realtime Tracking with a Deep Association Metric](#ds)
 
 ------------
 <a name="od"></a>
 ## 1. Object Detection
 
+------------
+<a name="ot"></a>
+## 1. Object Tracking
+
 ---------------
 <a name="ha"></a>
-## 2. The Hungarian Algorithm
+## 3. The Hungarian Algorithm
 
 
 ## References
@@ -24,3 +29,4 @@
 2. https://www.thinkautonomous.ai/blog/hungarian-algorithm/
 3. https://medium.com/augmented-startups/deepsort-deep-learning-applied-to-object-tracking-924f59f99104
 4. https://www.youtube.com/watch?v=QtAYgtBnhws&ab_channel=DynamicVisionandLearningGroup
+5. https://www.youtube.com/watch?v=BLRSIwal7Go&list=PL2zRqk16wsdoYzrWStffqBAoUY8XdvatV&index=12&ab_channel=FirstPrinciplesofComputerVision
