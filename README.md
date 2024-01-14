@@ -1,4 +1,22 @@
-# Multi-Object-Tracking-with-Deep-SORT
+# Multi Object Tracking with DeepSORT
+
+## Problem Statement
+
+## Abstract
+
+## Table of Contents
+1. [Object Detection](#od)
+2. [The Hungarian Algorithm](#ha)
+3. [SORT: Simple Online Realtime Tracking](#s)
+4. [Deep SORT: Simple Online and Realtime Tracking with a Deep Association Metric](#ds)
+
+------------
+<a name="od"></a>
+## 1. Object Detection
+
+---------------
+<a name="ha"></a>
+## 2. The Hungarian Algorithm
 
 
 ## References
