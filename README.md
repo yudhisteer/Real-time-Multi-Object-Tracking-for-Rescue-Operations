@@ -23,9 +23,17 @@
 <a name="ha"></a>
 ## 3. The Hungarian Algorithm
 
+<p align="center">
+  <img src="https://github.com/yudhisteer/Multi-Object-Tracking-with-Deep-SORT/assets/59663734/9b7d346a-ef6d-4456-ba1d-d26d668ddc1d" width="60%" />
+</p>
+
 ![Hungarian drawio (1)](https://github.com/yudhisteer/Multi-Object-Tracking-with-Deep-SORT/assets/59663734/38d83258-89c1-424a-ad84-8ec151d62090)
 
-<img width="457" alt="image" src="https://github.com/yudhisteer/Multi-Object-Tracking-with-Deep-SORT/assets/59663734/c72559b1-7ffe-4131-a05d-4b82239f433a">
+
+
+<p align="center">
+  <img src="https://github.com/yudhisteer/Multi-Object-Tracking-with-Deep-SORT/assets/59663734/c72559b1-7ffe-4131-a05d-4b82239f433a" width="470%" />
+</p>
 
 ----------------
 
