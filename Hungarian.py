@@ -8,17 +8,9 @@ Trk_2 = [250, 160, 300, 220]
 Trk_3 = [400, 80, 450, 140]
 
 # Detections at time 1
-Det_1 = [110, 120, 150, 180] # Should not frame
-Det_2 = [250, 180, 300, 240] # Should match frame A
-Det_3 = [350, 160, 400, 220] # Should match frame B
-
-
-
-
-
-
-
-
+Det_1 = [110, 120, 150, 180]
+Det_2 = [250, 180, 300, 240]
+Det_3 = [350, 160, 400, 220]
 
 
 
