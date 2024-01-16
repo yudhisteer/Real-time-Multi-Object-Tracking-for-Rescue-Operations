@@ -20,7 +20,9 @@
 ## 2. Object Tracking
 
 
-### 2.1 Metric: Intersection over Union (IoU)
+### 2.1 Metric
+
+#### 2.1.1 Intersection over Union (IoU)
 
 ```python
 def calculate_IOU(bbox1: List[int], bbox2: List[int]):
@@ -54,6 +56,14 @@ def calculate_IOU(bbox1: List[int], bbox2: List[int]):
     
     return iou
 ```
+
+#### 2.1.2 Sanchez-Matilla
+
+#### 2.1.3 Yu
+
+#### 2.1.4 MOTA
+
+#### 2.1.5 IDF1
 
 ---------------
 <a name="ha"></a>
