@@ -1,4 +1,4 @@
-# Multi-Object Tracking with DeepSORT
+# Egocentric (ego) Tracking with DeepSORT
 
 ## Problem Statement
 
