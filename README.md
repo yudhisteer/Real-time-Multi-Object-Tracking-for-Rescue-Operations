@@ -1,4 +1,4 @@
-# Egocentric (ego) Tracking with Deep SORT
+# Real-time Ego Tracking: A Tactical Solution for Rescue Operations
 
 ## Problem Statement
 
