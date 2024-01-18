@@ -18,11 +18,19 @@
 ------------
 <a name="ot"></a>
 ## 2. Object Tracking
+In my other project - [Optical Flow Obstacle Avoidance for UAV](https://github.com/yudhisteer/Optical-Flow-Obstacle-Avoidance-for-UAV) - we saw how we can analyze the apparent motion of objects in a sequence of images. We tested with sparse, dense and deep optical flow to eventually see how every point in the scene is moving from frame to frame in a video sequence. In object tracking, we want to track objects or regions from frame to frame. 
 
+### 2.1 Change Detection
 
-### 2.1 Metric
+### 2.2 Gaussian Mixture Model
 
-#### 2.1.1 Intersection over Union (IoU)
+### 2.3 Template Matching
+
+### 2.4 Tracking-by-Detection
+
+### 2.5 Metric
+
+#### 2.5.1 Intersection over Union (IoU)
 
 ```python
 def calculate_IOU(bbox1: List[int], bbox2: List[int]):
@@ -57,9 +65,9 @@ def calculate_IOU(bbox1: List[int], bbox2: List[int]):
     return iou
 ```
 
-#### 2.1.2 Sanchez-Matilla
+#### 2.5.2 Sanchez-Matilla
 
-#### 2.1.3 Yu
+#### 2.5.3 Yu
 
 #### 2.1.4 MOTA
 
