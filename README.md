@@ -32,38 +32,6 @@ In my other project - [Optical Flow Obstacle Avoidance for UAV](https://github.c
 
 #### 2.5.1 Intersection over Union (IoU)
 
-```python
-def calculate_IOU(bbox1: List[int], bbox2: List[int]):
-
-    # Get max and min coordinates 
-    x1 = max(bbox1[0], bbox2[0])
-    y1 = max(bbox1[1], bbox2[1])
-    x2 = min(bbox1[2], bbox2[2])
-    y2 = min(bbox1[3], bbox2[3])
-
-    # Calculate the distance between coordinates
-    width = x2 - x1
-    height = y2 - y1
-
-    # Condition to see if there is an overlap
-    if width <= 0 or height <= 0:
-        # No overlap
-        iou = 0
-        return iou
-
-    # Calculate overlap area
-    overlap = width * height
-
-    # Calculate union area
-    area_bbox1 = (bbox1[2] - bbox1[0]) * (bbox1[3] - bbox1[1])
-    area_bbox2 = (bbox2[2] - bbox2[0]) * (bbox2[3] - bbox2[1])
-    union_area = area_bbox1 + area_bbox2 - overlap
-    
-    # Calculate IOU
-    iou = round(overlap/union_area,5)
-    
-    return iou
-```
 
 #### 2.5.2 Sanchez-Matilla
 
