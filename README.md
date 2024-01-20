@@ -46,13 +46,11 @@ There are a few ways to detect meaningful changes:
 
 
 
-### 2.2 Gaussian Mixture Model
+### 2.2 Template Matching
 
-### 2.3 Template Matching
+### 2.3 Tracking-by-Detection
 
-### 2.4 Tracking-by-Detection
-
-### 2.5 Metric
+### 2.4 Metric
 
 #### 2.5.1 Intersection over Union (IoU)
 
