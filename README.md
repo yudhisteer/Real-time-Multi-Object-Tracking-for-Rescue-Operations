@@ -18,13 +18,31 @@
 ------------
 <a name="ot"></a>
 ## 2. Object Tracking
-In my other project - [Optical Flow Obstacle Avoidance for UAV](https://github.com/yudhisteer/Optical-Flow-Obstacle-Avoidance-for-UAV) - we saw how we can analyze the apparent motion of objects in a sequence of images. We tested with sparse, dense and deep optical flow to eventually see how every point in the scene is moving from frame to frame in a video sequence. In object tracking, we want to track objects or regions from frame to frame. 
+In my other project - [**Optical Flow Obstacle Avoidance for UAV**](https://github.com/yudhisteer/Optical-Flow-Obstacle-Avoidance-for-UAV) - we saw how we can analyze the **apparent motion** of objects in a sequence of images using ```Optical Flow```. We tested with **sparse**, **dense**, and **deep optical flow** to eventually see how every point in the scene is moving from frame to frame in a video sequence. In object tracking, we want to track **objects** or **regions** from frame to frame. 
 
 ### 2.1 Change Detection
+Change detection refers to a way to detect meaningful changes in a sequence of frames. Suppose we have a static camera filming the environment as shown in the video below, the meaningful changes will be the moving objects - me running. So the the real problem, In other words, we will be doing a real-time **classification** (```foreground-background classification```) of each pixel as belonging to the **foreground** (```meaningful change```) or belonging to a **background** (```static```).
 
 
+To build this classification, we will need to get rid of unmeaningful changes or uninterested changes which are:
+
+- Background fluctuations such as leaves moving due to wind.
+- Image noise due to low light intensity.
+- Natural turbulence such as snow or rain.
+- Shadows of people moving.
+- Camera shake such as in the video below.
 
 https://github.com/yudhisteer/Real-time-Ego-Tracking-A-Tactical-Solution-for-Rescue-Operations/assets/59663734/38a4e14a-6e03-4ead-adee-7a9a13bb01a5
+
+There are a few ways to detect meaningful changes:
+1. We calculate the difference between the current frame and the previous one. Wherever this difference is significantly higher than a set threshold, we consider it a change. However, we may experience a lot of noise and register uninterested changes such as background fluctuations.
+
+2. A more robust method is to compute a background image, i.e., the **average** of the first ```K``` frames of the scene. We then compare our pixel value (subsequent frames) with the average background image. However, it is only one value that we are storing for a pixel as the model and we comparing all the future values with it and may not handle the waving of leaves or change in lighting.
+
+3. A better method than the average of the first ```K``` frames would be to instead calculate the **median** of the first K frames. It is more stable than the average, but a value in any given frame can vary substantially from the most popular value.
+
+4. An even more robust model is to build an **adaptive** one such that the median is being computed using the last few frames and not the first few frames. That is, we are going to recompute the median of the background model and it is going to adapt to changes. We can experience substantial improvement, especially for background fluctuations.
+
 
 
 
