@@ -44,9 +44,22 @@ There are a few ways to detect meaningful changes:
 4. An even more robust model is to build an **adaptive** one such that the median is computed using the last few frames and not the first few frames. That is, we are going to recompute the median of the background model and it is going to adapt to changes. We can experience substantial improvement, especially for background fluctuations.
 
 
-
-
 ### 2.2 Template Matching
+Now that we can spot important changes in videos, we choose one of these changes to represent an object or area we want to focus on. Our goal is to follow and track this object throughout the entire video sequence. We can do so by using a region of interest (ROI) as a template and applying template matching from frame to frame.
+
+#### 2.2.1 Appearance-based Tracking
+One approach involves using the entire image region to create **templates** and then applying **template matching**. This process involves creating a template from the initial image, using it to locate the object in the next frame, and then updating the template for further template matching in subsequent frames.
+
+<p align="center">
+  <img src="https://github.com/yudhisteer/Real-time-Ego-Tracking-A-Tactical-Solution-for-Rescue-Operations/assets/59663734/a4294f57-94ea-4d66-8863-3dcf4830b165" width="70%" />
+</p>
+
+In the example above, we take the grey car in frame ```t-1``` in the red window as a template.  We then apply that template within a search window (green) in the next frame, ```t```. Wherever we find a good match (blue), we declare it as the new position of the object. The condition is that the **change in appearance** of the object between time ```t-1``` and ```t``` is **very small**. However, this method does not handle well large changes in **scale**, **viewpoint**, or **occlusion**.
+
+
+#### 2.2.2 Histogram-based Tracking
+
+
 
 ### 2.3 Tracking-by-Detection
 
@@ -121,7 +134,9 @@ Unmatched Trackings: [[400, 80, 450, 140]]
 ## 4. SORT: Simple Online Realtime Tracking
 
 
-
+--------------
+<a name="ds"></a>
+## 4. Deep SORT: Simple Online and Realtime Tracking with a Deep Association Metric
 
 ----------------
 
