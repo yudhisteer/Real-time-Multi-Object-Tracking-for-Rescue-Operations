@@ -1,4 +1,4 @@
-# Real-time Ego Tracking: A Tactical Solution for Rescue Operations
+# Real-time Multi-Object Tracking: A Tactical Solution for Rescue Operations
 
 ## Problem Statement
 
