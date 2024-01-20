@@ -37,11 +37,11 @@ https://github.com/yudhisteer/Real-time-Ego-Tracking-A-Tactical-Solution-for-Res
 There are a few ways to detect meaningful changes:
 1. We calculate the difference between the current frame and the previous one. Wherever this difference is significantly higher than a set threshold, we consider it a change. However, we may experience a lot of noise and register uninterested changes such as background fluctuations.
 
-2. A more robust method is to compute a background image, i.e., the **average** of the first ```K``` frames of the scene. We then compare our pixel value (subsequent frames) with the average background image. However, we are storing only one value for pixel as the model and we comparing all the future values with that value and may not handle the waving of leaves or change in lighting.
+2. A more robust method is to compute a background image, i.e., the **average** of the first ```K``` frames of the scene. We then compare our pixel value (subsequent frames) with the average background image. However, we are storing only one value for pixel as the model and we comparing all the future values with that value and may not handle the movement of leaves or change in lighting.
 
 3. A better method than the average of the first ```K``` frames would be to instead calculate the **median** of the first K frames. It is more stable than the average, but a value in any given frame can vary substantially from the most popular value.
 
-4. An even more robust model is to build an **adaptive** one such that the median is being computed using the last few frames and not the first few frames. That is, we are going to recompute the median of the background model and it is going to adapt to changes. We can experience substantial improvement, especially for background fluctuations.
+4. An even more robust model is to build an **adaptive** one such that the median is computed using the last few frames and not the first few frames. That is, we are going to recompute the median of the background model and it is going to adapt to changes. We can experience substantial improvement, especially for background fluctuations.
 
 
 
