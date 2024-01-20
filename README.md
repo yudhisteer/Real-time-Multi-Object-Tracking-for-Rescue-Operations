@@ -72,6 +72,10 @@ We want to track an object within a region of interest (ROI). However, the relia
 
 ### 2.3 Tracking-by-Detection
 
+#### 2.3.1 Matching Features using SIFT
+
+#### 2.3.2 Similarity Learning using Siamese Network
+
 ### 2.4 Metric
 
 #### 2.5.1 Intersection over Union (IoU)
