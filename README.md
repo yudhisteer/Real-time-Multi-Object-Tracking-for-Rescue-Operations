@@ -22,6 +22,12 @@ In my other project - [Optical Flow Obstacle Avoidance for UAV](https://github.c
 
 ### 2.1 Change Detection
 
+
+
+https://github.com/yudhisteer/Real-time-Ego-Tracking-A-Tactical-Solution-for-Rescue-Operations/assets/59663734/38a4e14a-6e03-4ead-adee-7a9a13bb01a5
+
+
+
 ### 2.2 Gaussian Mixture Model
 
 ### 2.3 Template Matching
