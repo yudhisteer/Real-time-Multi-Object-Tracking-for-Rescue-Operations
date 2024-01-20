@@ -59,7 +59,13 @@ In the example above, we take the grey car in frame ```t-1``` in the red window 
 
 #### 2.2.2 Histogram-based Tracking
 
+In histogram-based tracking, rather than using the entire image region, we compute a **histogram** - 1-dimensional (grayscale image) or high-dimensional histogram (RGB image). This histogram serves as a **template**, and the tracking process involves **matching** these histograms between images to effectively track the object.
 
+<p align="center">
+  <img src="https://github.com/yudhisteer/Real-time-Ego-Tracking-A-Tactical-Solution-for-Rescue-Operations/assets/59663734/d40b0246-bbe9-4191-adbf-16554e7adf93" width="90%" />
+</p>
+
+We want to track an object within a region of interest (ROI). However, the reliability of points in the ROI decreases towards the **edges** due to potential **background interference**. To address this, a **weighted histogram**, like the ```Epanechnikov kernel```, is used. This weights pixel contributions differently based on their distance from the center of the window. The weighted histograms are then employed for **matching** between frames, similar to **template matching**. This method, relying on histogram matching, proves more **resilient** to changes in **object pose**, **scale**, **illumination**, and **occlusion** compared to appearance-based template matching.
 
 ### 2.3 Tracking-by-Detection
 
