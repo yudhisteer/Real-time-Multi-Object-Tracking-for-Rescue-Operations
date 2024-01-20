@@ -32,7 +32,10 @@ To build this classification, we will need to get rid of unmeaningful changes or
 - Shadows of people moving.
 - Camera shake such as in the video below.
 
-https://github.com/yudhisteer/Real-time-Ego-Tracking-A-Tactical-Solution-for-Rescue-Operations/assets/59663734/38a4e14a-6e03-4ead-adee-7a9a13bb01a5
+<div style="text-align: center;">
+  <video src="https://github.com/yudhisteer/Real-time-Ego-Tracking-A-Tactical-Solution-for-Rescue-Operations/assets/59663734/38a4e14a-6e03-4ead-adee-7a9a13bb01a5" controls="controls" style="max-width: 730px;">
+  </video>
+</div>
 
 There are a few ways to detect meaningful changes:
 1. We calculate the difference between the current frame and the previous one. Wherever this difference is significantly higher than a set threshold, we consider it a change. However, we may experience a lot of noise and register uninterested changes such as background fluctuations.
