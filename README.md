@@ -135,10 +135,10 @@ def metric_sanchez_matilla(bbox1: Tuple[int, int, int, int], bbox2: Tuple[int, i
     # Diagonal of image
     Q_dist = np.sqrt(width ** 2 + height ** 2)
     # Get W,H and (X,Y)
-    X_A = (bbox1[2] - bbox1[0]) / 2
-    X_B = (bbox2[2] - bbox2[0]) / 2
-    Y_A = (bbox1[3] - bbox1[1]) / 2
-    Y_B = (bbox2[3] - bbox2[1]) / 2
+    X_A = (bbox1[2] + bbox1[0]) / 2
+    X_B = (bbox2[2] + bbox2[0]) / 2
+    Y_A = (bbox1[3] + bbox1[1]) / 2
+    Y_B = (bbox2[3] + bbox2[1]) / 2
     H_A = bbox1[3] - bbox1[1]
     H_B = bbox2[3] - bbox2[1]
     W_A = bbox1[2] - bbox1[0]
@@ -166,10 +166,10 @@ def metric_yu(bbox1: Tuple[int, int, int, int],
               new_features: np.ndarray) -> float:
 
     # Get W,H and (X,Y)
-    X_A = (bbox1[2] - bbox1[0]) / 2
-    X_B = (bbox2[2] - bbox2[0]) / 2
-    Y_A = (bbox1[3] - bbox1[1]) / 2
-    Y_B = (bbox2[3] - bbox2[1]) / 2
+    X_A = (bbox1[2] + bbox1[0]) / 2
+    X_B = (bbox2[2] + bbox2[0]) / 2
+    Y_A = (bbox1[3] + bbox1[1]) / 2
+    Y_B = (bbox2[3] + bbox2[1]) / 2
     H_A = bbox1[3] - bbox1[1]
     H_B = bbox2[3] - bbox2[1]
     W_A = bbox1[2] - bbox1[0]
