@@ -84,9 +84,9 @@ We want to track an object within a region of interest (ROI). However, the relia
 
 
 
-### 2.4 Metric
+### 2.4 Cost Function
 
-#### 2.5.1 Intersection over Union (IoU)
+#### 2.4.1 Intersection over Union (IoU)
 
 ```python
 def metric_IOU(bbox1: Tuple[int, int, int, int], bbox2: Tuple[int, int, int, int]) -> float:
@@ -120,7 +120,7 @@ def metric_IOU(bbox1: Tuple[int, int, int, int], bbox2: Tuple[int, int, int, int
 ```
 
 
-#### 2.5.2 Sanchez-Matilla
+#### 2.4.2 Sanchez-Matilla
 
 ```python
 def metric_sanchez_matilla(bbox1: Tuple[int, int, int, int], bbox2: Tuple[int, int, int, int]) -> float:
@@ -157,7 +157,7 @@ def metric_sanchez_matilla(bbox1: Tuple[int, int, int, int], bbox2: Tuple[int, i
 
 ```
 
-#### 2.5.3 Yu
+#### 2.4.3 Yu
 
 ```python
 def metric_yu(bbox1: Tuple[int, int, int, int],
@@ -194,9 +194,11 @@ def metric_yu(bbox1: Tuple[int, int, int, int],
     return yu_cost
 ```
 
-#### 2.1.4 MOTA
+### 2.4 Metric
 
-#### 2.1.5 IDF1
+#### 2.5.1 MOTA
+
+#### 2.5.2 IDF1
 
 ---------------
 <a name="ha"></a>
