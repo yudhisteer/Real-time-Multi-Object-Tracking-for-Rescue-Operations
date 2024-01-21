@@ -74,6 +74,21 @@ We want to track an object within a region of interest (ROI). However, the relia
 
 #### 2.3.1 Matching Features using SIFT
 
+1. Given a frame at time ```t-1```, we can either use an object detection algorithm to detect an object and draw a bounding box around it, or we can manually draw a bounding box around an object of interest. 
+2. We then compute **SIFT** of similar features for the frame. Note that SIFT has the location and also the descriptor of the features.
+3. We classify the features within our bounding box as an **object** and declare them to belong to set ```O```.
+4. We then classify the remaining features (outside the bounding box) as **background** and declare them to belong to set ```B```.
+5. For the next frame ```t```, we again calculate SIFT **features** and **descriptors**.
+6. For each feature and descriptor in frame ```t```, we calculate the distance, ```d_O```, between the current feature and the best matching feature in the object model, ```O```.
+7. For each feature and descriptor in frame ```t```, we calculate the distance, ```d_B```, between the current feature and the best matching feature in the background model, ```B```.
+8. If ```d_O``` is much smaller than ```d_B``` then we give a confidence value of ```+1``` that the feature belongs to the object else we give a confidence value of ```-1``` that it does not belong to the object.
+9. We then take the bounding box in the previous frame ```t-1``` and place it in the current frame ```t```.
+10. We will **distort** this window that has changed its position and shape to grab as many object features as possible.
+11. We want to find the window for which we have the **largest** number of **object features** inside and a small number of background features such that it becomes the **new position** of the object.
+12. Recall that the object may have changed in appearance slightly so we're going to then take the features inside to update the object model, ```O```, and the features outside to update the background model, ```B```.
+134. We repeat the process for all the remaining frames and track the object of interest.
+
+
 #### 2.3.2 Similarity Learning using Siamese Network
 
 
