@@ -76,6 +76,14 @@ We want to track an object within a region of interest (ROI). However, the relia
 
 #### 2.3.2 Similarity Learning using Siamese Network
 
+
+<p align="center">
+  <img src="https://github.com/yudhisteer/Real-time-Ego-Tracking-A-Tactical-Solution-for-Rescue-Operations/assets/59663734/cd85c8a9-1bf8-4a8f-a695-a1495eecfe63" width="90%" />
+</p>
+
+
+
+
 ### 2.4 Metric
 
 #### 2.5.1 Intersection over Union (IoU)
