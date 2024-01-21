@@ -88,10 +88,111 @@ We want to track an object within a region of interest (ROI). However, the relia
 
 #### 2.5.1 Intersection over Union (IoU)
 
+```python
+def metric_IOU(bbox1: Tuple[int, int, int, int], bbox2: Tuple[int, int, int, int]) -> float:
+    # Get max and min coordinates
+    x1 = max(int(bbox1[0]), int(bbox2[0]))
+    y1 = max(bbox1[1], bbox2[1])
+    x2 = min(bbox1[2], bbox2[2])
+    y2 = min(bbox1[3], bbox2[3])
+
+    # Calculate the distance between coordinates
+    width = x2 - x1
+    height = y2 - y1
+
+    # Condition to see if there is overlap
+    if width > 0 and height > 0:
+        # Calculate overlap area
+        overlap = width * height
+
+        # Calculate union area
+        area_bbox1 = (bbox1[2] - bbox1[0]) * (bbox1[3] - bbox1[1])
+        area_bbox2 = (bbox2[2] - bbox2[0]) * (bbox2[3] - bbox2[1])
+        union_area = area_bbox1 + area_bbox2 - overlap
+
+        # Calculate IOU
+        iou = round(overlap / union_area, 5)
+        return iou
+
+    # No overlap
+    iou = 0
+    return iou
+```
+
 
 #### 2.5.2 Sanchez-Matilla
 
+```python
+def metric_sanchez_matilla(bbox1: Tuple[int, int, int, int], bbox2: Tuple[int, int, int, int]) -> float:
+    
+    # Get width and height of image
+    width = 1920
+    height = 1080
+
+    # Area of image
+    Q_shp = width * height
+
+    # Diagonal of image
+    Q_dist = np.sqrt(width ** 2 + height ** 2)
+    # Get W,H and (X,Y)
+    X_A = (bbox1[2] - bbox1[0]) / 2
+    X_B = (bbox2[2] - bbox2[0]) / 2
+    Y_A = (bbox1[3] - bbox1[1]) / 2
+    Y_B = (bbox2[3] - bbox2[1]) / 2
+    H_A = bbox1[3] - bbox1[1]
+    H_B = bbox2[3] - bbox2[1]
+    W_A = bbox1[2] - bbox1[0]
+    W_B = bbox2[2] - bbox2[0]
+
+    # Distance term
+    c_dist = np.sqrt((X_A - X_B) ** 2 + (Y_A - Y_B) ** 2) / Q_dist
+
+    # Shape term
+    c_shp = np.sqrt((H_A - H_B) ** 2 + (W_A - W_B) ** 2) / Q_shp
+
+    # Cost
+    sm_cost = c_dist * c_shp
+
+    return sm_cost
+
+```
+
 #### 2.5.3 Yu
+
+```python
+def metric_yu(bbox1: Tuple[int, int, int, int],
+              bbox2: Tuple[int, int, int, int],
+              old_features: np.ndarray,
+              new_features: np.ndarray) -> float:
+
+    # Get W,H and (X,Y)
+    X_A = (bbox1[2] - bbox1[0]) / 2
+    X_B = (bbox2[2] - bbox2[0]) / 2
+    Y_A = (bbox1[3] - bbox1[1]) / 2
+    Y_B = (bbox2[3] - bbox2[1]) / 2
+    H_A = bbox1[3] - bbox1[1]
+    H_B = bbox2[3] - bbox2[1]
+    W_A = bbox1[2] - bbox1[0]
+    W_B = bbox2[2] - bbox2[0]
+
+    # Weights
+    w1 = 0.5
+    w2 = 1.5
+
+    # Distance term
+    c_dist = np.exp(-w1 * (((X_A - X_B) / W_A) ** 2 + ((Y_A - Y_B) / H_A) ** 2))
+
+    # Shape term
+    c_shp = np.exp(-w2 * ((np.abs(H_A - H_B)) / (H_A + H_B) + (np.abs(W_A - W_B)) / (W_A + W_B)))
+
+    # Feature cost
+    c_AB = cosine_similarity(old_features, new_features)[0][0]
+
+    # Total cost
+    yu_cost = c_AB * c_dist * c_shp
+
+    return yu_cost
+```
 
 #### 2.1.4 MOTA
 
