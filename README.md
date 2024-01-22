@@ -178,7 +178,7 @@ Unmatched Trackings: [[400, 80, 450, 140]]
 ## 4. SORT: Simple Online Realtime Tracking
 
 ### 4.1 Detection
-The authors of the SORT paper use a Faster Region CNN - FrRCNN as their object detector. In my implementation, I will use the [YOLOv8m](https://github.com/ultralytics/ultralytics) model. I have created a yolo_detection function which takes in as parameters an image, the YOLO model, and the label classes we want to detect.
+The authors of the SORT paper use a Faster Region CNN - FrRCNN as their object detector. In my implementation, I will use the [YOLOv8m](https://github.com/ultralytics/ultralytics) model. I have created a **yolo_detection** function which takes in as parameters an image, the YOLO model, and the label classes we want to detect.
 
 ```python
     # 1. Run YOLO Object Detection to get new detections
@@ -186,6 +186,7 @@ The authors of the SORT paper use a Faster Region CNN - FrRCNN as their object d
 ```
 
 ### 4.2 Estimation Model
+In the SORT algorithm, a ```first-order four-dimensional (4D) Kalman filter``` is employed for object tracking. Each **tracked object** is represented by a ```4D state vector```, incorporating **position** coordinates and **velocities**. The Kalman filter is initialized upon detection, setting its initial state based on the bounding box. In each frame, the filter **predicts** the object's **next state**, updating the bounding box accordingly. When a detection aligns with a track, the Kalman filter is **updated** using the observed information. In my project [UAV Drone: Object Tracking using Kalman Filter](https://github.com/yudhisteer/UAV-Drone-Object-Tracking-using-Kalman-Filter), I explain more about the Kalman Filter in detail.
 
 ```python
 def KalmanFilter4D(R_std: int = 10, Q_std: float = 0.01):
