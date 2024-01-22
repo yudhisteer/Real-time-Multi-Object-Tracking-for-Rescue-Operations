@@ -178,9 +178,11 @@ Unmatched Trackings: [[400, 80, 450, 140]]
 ## 4. SORT: Simple Online Realtime Tracking
 
 ### 4.1 Detection
+The authors of the SORT paper use a Faster Region CNN - FrRCNN as their object detector. In my implementation, I will use the [YOLOv8m](https://github.com/ultralytics/ultralytics) model. I have created a yolo_detection function which takes in as parameters an image, the YOLO model, and the label classes we want to detect.
+
 ```python
     # 1. Run YOLO Object Detection to get new detections
-    _, new_detections_bbox = yolo_detection(image_copy, model, label_class={'car', 'truck'})
+    _, new_detections_bbox = yolo_detection(image_copy, model, label_class={'car', 'truck', 'person'})
 ```
 
 ### 4.2 Estimation Model
