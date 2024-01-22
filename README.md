@@ -176,6 +176,7 @@ Unmatched Trackings: [[400, 80, 450, 140]]
 ------------
 <a name="s"></a>
 ## 4. SORT: Simple Online Realtime Tracking
+The authors of the SORT paper offer a lean approach for MOT for online and real-time applications. They argue that in the tracking-by-detection method, detection holds a key factor whereby the latter can increase the tracking accuracy by ```18.9%```. SORT focuses on a frame-to-frame prediction using the **Kalman Filter** and association using the **Hungarian algorithm**. Their method achieves speed and accuracy comparable to, at that time, SOTA online trackers. Below is my implementation of the SORT algorithm. Though it is not the same as the official SORT GitHub repo, my approach offers a simpler method with not-so-bad accuracy. Most of the explanations below have been extracted from the [SORT](https://arxiv.org/abs/1602.00763) paper itself and rewritten by me.
 
 ### 4.1 Detection
 The authors of the SORT paper use a Faster Region CNN - FrRCNN as their object detector. In my implementation, I will use the [YOLOv8m](https://github.com/ultralytics/ultralytics) model. I have created a **yolo_detection** function which takes in as parameters an image, the YOLO model, and the label classes we want to detect.
