@@ -232,6 +232,7 @@ def state_transition_matrix(dt: float):
 ```
 
 ### 4.3 Data Association
+When associating detections with existing targets, the algorithm estimates each target's bounding box by predicting its position in the current frame. The assignment cost matrix is computed using the IOU distance, measuring the overlap between detections and predicted bounding boxes. The **Hungarian** algorithm optimally solves the **assignment problem**, with a minimum IOU threshold rejecting assignments with insufficient overlap. Below I wrote an **association** function that computes the Hungarian and returns the indices of match detections, bounding boxes of unmatched detections, and bounding boxes of unmatched trackers as explained in the Hungarian section.
 
 ```python
     # 4. Associate new detections bbox (detections) and old obstacles bbox (tracks)
@@ -239,6 +240,8 @@ def state_transition_matrix(dt: float):
                                                                                    detections=new_detections_bbox,
                                                                                   metric_function=metric_total)
 ```
+
+In this code snippet, for each pair of matched indices representing existing targets and new detections, the algorithm retrieves the ID, bounding box, and age of the old obstacle. It increments the age and creates a new obstacle instance with the corresponding information, including the current time. The Kalman filter of the obstacle is then updated with the measurement (bounding box) from the new detection. Subsequently, the Kalman filter predicts the next state. The obstacle's time is updated, and its bounding box is adjusted according to the Kalman filter's predicted values. Finally, the newly updated obstacle is appended to the list of new obstacles.
 
 ```python
     # 5. Matches: Creating new obstacles based on match indices
@@ -264,6 +267,11 @@ def state_transition_matrix(dt: float):
         new_obstacles.append(obstacle)
 ```
 
+
+### 4.4 Creation and Deletion of Track Identities
+
+In the code below, for each unmatched detection, a new obstacle is created with a unique ID, using the bounding box coordinates of the unmatched detection and the current time. This ensures that each new detection, not associated with any existing target, is assigned a distinct identifier. The newly created obstacle is then added to the list of new obstacles, and the ID counter is incremented to maintain uniqueness for the next unmatched detection.
+
 ```python
     # 6. New (Unmatched) Detections: Give the new detections an id and register their bounding box coordinates
     for unmatched_detection_bbox in unmatched_detections:
@@ -274,6 +282,8 @@ def state_transition_matrix(dt: float):
         # Update id
         id += 1
 ```
+
+Here, the unmatched trackers, which represent existing targets that were not successfully matched with any detection in the current frame, are processed. For each unmatched tracker, the corresponding obstacle is retrieved from the list of old obstacles based on the bounding box. The Kalman filter associated with the obstacle is then updated by predicting its state using the state transition matrix and the time difference since the last update. The unmatch age of the obstacle is incremented, indicating how many frames it has remained unmatched. The obstacle's bounding box is also updated, and it is added to the list of new obstacles, ensuring its continuation in tracking.
 
 ```python
     # 7. Unmatched tracking: Update unmatch age of tracks in unmatch trackers
@@ -296,7 +306,7 @@ def state_transition_matrix(dt: float):
             new_obstacles.append(obstacle)
 ```
 
-### 4.4 Creation and Deletion of Track Identities
+Tracks are terminated after not being detected for a duration defined by "MAX_UNMATCHED_AGE". It avoids issues where predictions continue for a long time without being corrected by the detector. The author argues that "MAX_UNMATCHED_AGE" is set to ```1``` in experiments for two reasons: the constant velocity model is a poor model of the true dynamics, and secondly, the focus is on frame-to-frame tracking rather than **re-identification**. 
 
 ```python
     # Draw bounding boxes of new obstacles with their corresponding id
