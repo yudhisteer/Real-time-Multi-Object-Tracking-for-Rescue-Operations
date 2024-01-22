@@ -242,7 +242,7 @@ When associating detections with existing targets, the algorithm estimates each 
                                                                                   metric_function=metric_total)
 ```
 
-In this code snippet, for each pair of matched indices representing existing targets and new detections, the algorithm retrieves the ID, bounding box, and age of the old obstacle. It increments the age and creates a new obstacle instance with the corresponding information, including the current time. The Kalman filter of the obstacle is then updated with the measurement (bounding box) from the new detection. Subsequently, the Kalman filter predicts the next state. The obstacle's time is updated, and its bounding box is adjusted according to the Kalman filter's predicted values. Finally, the newly updated obstacle is appended to the list of new obstacles.
+In this code snippet, for each pair of matched indices representing existing targets and new detections, the algorithm retrieves the ID, bounding box, and age of the old obstacle. It increments the age and creates a new obstacle instance with the corresponding information, including the current time. The Kalman filter predicts the next state. Subsequently, the Kalman filter of the obstacle is then updated with the measurement (bounding box) from the new detection. The obstacle's time is updated, and its bounding box is adjusted according to the Kalman filter's predicted values. Finally, the newly updated obstacle is appended to the list of new obstacles.
 
 ```python
     # 5. Matches: Creating new obstacles based on match indices
@@ -255,15 +255,15 @@ In this code snippet, for each pair of matched indices representing existing tar
         age = old_obstacles[index[0]].age + 1
         # Create an obstacle based on id of old obstacle and bounding box of new detection
         obstacle = ObstacleSORT(id=id, bbox=detection_bbox, age=age, time=current_time)
-        # UPDATE
-        measurement = new_detections_bbox[index[1]]
-        obstacle.kf.update(np.array(measurement))
         # PREDICTION
         F = state_transition_matrix(current_time - obstacle.time)
         obstacle.kf.F = F
         obstacle.kf.predict()
         obstacle.time = current_time
         obstacle.bbox = [int(obstacle.kf.x[0]), int(obstacle.kf.x[2]), int(obstacle.kf.x[4]), int(obstacle.kf.x[6])]
+        # UPDATE
+        measurement = new_detections_bbox[index[1]]
+        obstacle.kf.update(np.array(measurement))
         # Append obstacle to new obstacles list
         new_obstacles.append(obstacle)
 ```
