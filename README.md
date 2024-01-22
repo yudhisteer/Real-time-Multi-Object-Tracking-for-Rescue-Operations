@@ -283,7 +283,7 @@ In the code below, for each unmatched detection, a new obstacle is created with 
         id += 1
 ```
 
-Here, the unmatched trackers, which represent existing targets that were not successfully matched with any detection in the current frame, are processed. For each unmatched tracker, the corresponding obstacle is retrieved from the list of old obstacles based on the bounding box. The Kalman filter associated with the obstacle is then updated by predicting its state using the state transition matrix and the time difference since the last update. The unmatch age of the obstacle is incremented, indicating how many frames it has remained unmatched. The obstacle's bounding box is also updated, and it is added to the list of new obstacles, ensuring its continuation in tracking.
+Here, the unmatched trackers, which represent existing targets that were not successfully matched with any detection in the current frame, are processed. For each unmatched tracker, the corresponding obstacle is retrieved from the list of old obstacles based on the bounding box. The Kalman filter associated with the obstacle is then updated by predicting its state using the state transition matrix and the time difference since the last update. The unmatch age of the obstacle is incremented, indicating how many frames it has remained unmatched. The obstacle's bounding box is also updated, and it is added to the list of new obstacles to continue tracking.
 
 ```python
     # 7. Unmatched tracking: Update unmatch age of tracks in unmatch trackers
