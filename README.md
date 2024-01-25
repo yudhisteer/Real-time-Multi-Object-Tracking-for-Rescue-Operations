@@ -132,14 +132,16 @@ Fengwei Yu et al. from the paper [**POI: Multiple Object Tracking with High Perf
 
 
 ### 2.4 Metric
+The choice of detection accuracy and precision significantly impacts the performance of tracking-by-detection models. Therefore, direct comparisons between trackers using different detectors are less meaningful. Even with similar detection accuracy and precision, tracking model quality can vary widely, necessitating additional metrics.
 
 #### 2.5.1 MOTA
+Multiple object tracking accuracy (MOTA) combines false positives, missed targets, and identity switches. In the formula below **FN** is the number of **false negatives**, **FP** is the number of **false positives**, **IDS** is the number of **identity switches** and **GT** is the number of objects present.
 
 <p align="center">
   <img src="https://github.com/yudhisteer/Real-time-Multi-Object-Tracking-for-Rescue-Operations/assets/59663734/ad07dbea-23fe-44d1-b5b2-f34d1b3bfd8e" />
 </p>
 
-
+Multiple object tracking precision (MOTP) measures the **misalignment** of the **predicted bounding boxes** and the **ground truth**. ```d_i``` is the **distance** between the ground truth and the prediction of object ```i```, and ```c_t``` is the number of matches found in frame ```t```.
 
 <p align="center">
   <img src="https://github.com/yudhisteer/Real-time-Multi-Object-Tracking-for-Rescue-Operations/assets/59663734/f6ebd4d8-83fd-4ef6-b5c3-2dcfdfea0922" />
