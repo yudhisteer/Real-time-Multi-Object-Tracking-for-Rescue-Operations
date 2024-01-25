@@ -103,15 +103,23 @@ We want to track an object within a region of interest (ROI). However, the relia
 
 #### 2.4.1 Intersection over Union (IoU)
 
-
+<p align="center">
+  <img src="https://github.com/yudhisteer/Real-time-Multi-Object-Tracking-for-Rescue-Operations/assets/59663734/eada6f49-bdc1-4451-8b39-4c0e85e9aba8" />
+</p>
 
 
 #### 2.4.2 Sanchez-Matilla
 
+<p align="center">
+  <img src="https://github.com/yudhisteer/Real-time-Multi-Object-Tracking-for-Rescue-Operations/assets/59663734/5e355475-9173-42ab-aa7a-d77aa683dc6c" />
+</p>
 
 
 #### 2.4.3 Yu
 
+<p align="center">
+  <img src="https://github.com/yudhisteer/Real-time-Multi-Object-Tracking-for-Rescue-Operations/assets/59663734/35b8a583-063c-40c6-ac55-d93cc4d0c44c" />
+</p>
 
 
 ### 2.4 Metric
