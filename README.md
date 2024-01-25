@@ -148,6 +148,7 @@ Multiple object tracking precision (MOTP) measures the **misalignment** of the *
 </p>
 
 #### 2.5.2 IDF1
+IDF1 score is the **ratio** of correctly identified detections over the average of ground truth and predicted detections.  **IDTP** is Identity True Positives, **IDFP** is Identity False Positives, and **IDFN** is Identity False Negatives.
 
 <p align="center">
   <img src="https://github.com/yudhisteer/Real-time-Multi-Object-Tracking-for-Rescue-Operations/assets/59663734/3caa0642-3e2d-46e7-beb1-88be576a858e" />
