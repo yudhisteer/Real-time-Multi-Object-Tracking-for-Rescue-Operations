@@ -218,20 +218,6 @@ def KalmanFilter4D(R_std: int = 10, Q_std: float = 0.01):
     return kf
 ```
 
-```python
-def state_transition_matrix(dt: float):
-    # Define the state transition matrix F based on the time step (dt)
-    return np.array([
-        [1, dt, 0, 0, 0, 0, 0, 0],
-        [0, 1, 0, 0, 0, 0, 0, 0],
-        [0, 0, 1, dt, 0, 0, 0, 0],
-        [0, 0, 0, 1, 0, 0, 0, 0],
-        [0, 0, 0, 0, 1, dt, 0, 0],
-        [0, 0, 0, 0, 0, 1, 0, 0],
-        [0, 0, 0, 0, 0, 0, 1, dt],
-        [0, 0, 0, 0, 0, 0, 0, 1]])
-```
-
 ### 4.3 Data Association
 When associating detections with existing targets, the algorithm estimates each target's bounding box by predicting its position in the current frame. The assignment cost matrix is computed using the IOU distance, measuring the overlap between detections and predicted bounding boxes. The **Hungarian** algorithm optimally solves the **assignment problem**, with a minimum IOU threshold rejecting assignments with insufficient overlap. Below I wrote an **association** function that computes the Hungarian and returns the indices of match detections, bounding boxes of unmatched detections, and bounding boxes of unmatched trackers as explained in the Hungarian section.
 
