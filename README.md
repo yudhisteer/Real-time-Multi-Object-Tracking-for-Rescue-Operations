@@ -124,7 +124,7 @@ Sanchez-Matilla et al. from the paper [**Online multi-target tracking with stron
 
 
 #### 2.4.3 Yu
-Fengwei Yu et al. from the paper [**POI: Multiple Object Tracking with High Performance Detection and Appearance Feature**](https://arxiv.org/abs/1610.06136) proposed another affinity measure that computes the difference in position and shape **exponentially**, by also using **appearance** features. The features are extracted by a CNN with a 128-dimensional output. Notice that ```w1``` and ```w2``` are **weights** with values of ```0.5``` and ```1.5``` respectively. Similar to the IOU is has a range value between ```0``` and ```1```, denoting zero and complete similarity.
+Fengwei Yu et al. from the paper [**POI: Multiple Object Tracking with High Performance Detection and Appearance Feature**](https://arxiv.org/abs/1610.06136) proposed another affinity measure that computes the difference in position and shape **exponentially**, by also using **appearance** features. The features are extracted by a CNN with a 128-dimensional output and their **cosine similarity** is computed. Notice that ```w1``` and ```w2``` are **weights** with values of ```0.5``` and ```1.5``` respectively. Similar to the IOU is has a range value between ```0``` and ```1```, denoting zero and complete similarity.
 
 <p align="center">
   <img src="https://github.com/yudhisteer/Real-time-Multi-Object-Tracking-for-Rescue-Operations/assets/59663734/35b8a583-063c-40c6-ac55-d93cc4d0c44c" />
