@@ -130,10 +130,11 @@ We want to track an object within a region of interest (ROI). However, the relia
   <img src="https://github.com/yudhisteer/Real-time-Multi-Object-Tracking-for-Rescue-Operations/assets/59663734/ad07dbea-23fe-44d1-b5b2-f34d1b3bfd8e" />
 </p>
 
-<p align="center">
-  <img src="https://github.com/yudhisteer/Real-time-Multi-Object-Tracking-for-Rescue-Operations/assets/59663734/71e9cdb8-2aa5-4c75-891d-dffef9e3f843" />
-</p>
 
+
+<p align="center">
+  <img src="https://github.com/yudhisteer/Real-time-Multi-Object-Tracking-for-Rescue-Operations/assets/59663734/f6ebd4d8-83fd-4ef6-b5c3-2dcfdfea0922" />
+</p>
 
 #### 2.5.2 IDF1
 
