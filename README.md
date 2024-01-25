@@ -126,7 +126,21 @@ We want to track an object within a region of interest (ROI). However, the relia
 
 #### 2.5.1 MOTA
 
+<p align="center">
+  <img src="https://github.com/yudhisteer/Real-time-Multi-Object-Tracking-for-Rescue-Operations/assets/59663734/ad07dbea-23fe-44d1-b5b2-f34d1b3bfd8e" />
+</p>
+
+<p align="center">
+  <img src="https://github.com/yudhisteer/Real-time-Multi-Object-Tracking-for-Rescue-Operations/assets/59663734/71e9cdb8-2aa5-4c75-891d-dffef9e3f843" />
+</p>
+
+
 #### 2.5.2 IDF1
+
+<p align="center">
+  <img src="https://github.com/yudhisteer/Real-time-Multi-Object-Tracking-for-Rescue-Operations/assets/59663734/3caa0642-3e2d-46e7-beb1-88be576a858e" />
+</p>
+
 
 ---------------
 <a name="ha"></a>
@@ -332,3 +346,5 @@ Tracks are terminated after not being detected for a duration defined by "MAX_UN
 5. https://www.youtube.com/watch?app=desktop&v=ezSx8OyBZVc&ab_channel=ShokoufehMirzaei
 6. https://brilliant.org/wiki/hungarian-matching/
 7. https://www.youtube.com/watch?v=BLRSIwal7Go&list=PL2zRqk16wsdoYzrWStffqBAoUY8XdvatV&index=12&ab_channel=FirstPrinciplesofComputerVision
+8. https://learnopencv.com/object-tracking-and-reidentification-with-fairmot/
+9. https://cvhci.anthropomatik.kit.edu/~stiefel/papers/ECCV2006WorkshopCameraReady.pdf
