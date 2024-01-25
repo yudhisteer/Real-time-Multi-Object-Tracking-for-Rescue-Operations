@@ -100,13 +100,18 @@ We want to track an object within a region of interest (ROI). However, the relia
 
 
 ### 2.4 Cost Function
+Later in the Hungarian algorithm section, we will see we will have an algorithm we need to optimize. To do that, we will need a **cost function**. Below we discuss some of them.
 
 #### 2.4.1 Intersection over Union (IoU)
+Suppose we have an object we detected in frame ```t-1``` with its corresponding bounding box. For the next frame ```t```, we will again detect the same object with a new bounding box location. Now to make it more complex, suppose we have 2 or more bounding boxes overlapping on the old bounding box in frame ```t-1```. How do we know which bounding box belongs to the object detected in frame ```t-1```? 
 
+One way to do that is to hypothesize that the bounding box in the subsequent frame will be close to the bounding box in the previous frame. If so, we can select the pair of bounding boxes with the most **overlap**. Now since our building boxes may change scale depending on the position of the object, we want to normalize the overlap value hence the formula below:
 
 <p align="center">
   <img src="https://github.com/yudhisteer/Real-time-Multi-Object-Tracking-for-Rescue-Operations/assets/59663734/d88c15a4-3b38-4f30-b4ab-4249531a0fde" />
 </p>
+
+In our scenario, we will try to map tracks (detections at time ```t-1```) and detections at time ```t``` to find an optimal solution for the Hungarian algorithm.
 
 #### 2.4.2 Sanchez-Matilla
 
