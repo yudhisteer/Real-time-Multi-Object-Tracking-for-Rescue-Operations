@@ -1,6 +1,17 @@
 # Real-time Multi-Object Tracking for Rescue Operations
 
 ## Problem Statement
+On January 16th, 2024, a tropical storm, **Belal**, hit close to the southern coast of **Mauritius** and was now heading eastwards out into the Indian Ocean. At least **one person has died** from the powerful winds and rains of the cyclone. On the nearby French island of **Réunion**, thousands of residents remain without **power** and **water outages** following the cyclone's impact the day before. Seeing the calamity that the cyclone has done to my country, Mauritius, I wanted to investigate how I could use my computer vision knowledge to help the **authorities**. 
+
+After watching distressing footage online showing people **trapped** atop their cars amidst floods, as described vividly by Hindustan Times as "**Cars swept away like toys**," I recognized the urgent need for authorities to **track** and **assess** the number of individuals in need of **rescue**. In the chaotic scenario of people stuck in cars drifting in floodwaters, it's crucial to accurately track each person's **location** for successful rescue operations.
+
+<p align="center">
+  <img src="https://github.com/yudhisteer/Real-time-Multi-Object-Tracking-for-Rescue-Operations/assets/59663734/e3e921a6-ea73-4168-880f-0bba82a7bf4b" width="60%" />
+</p>
+<div align="center">
+    <p>Image Source: <a href="https://www.hindustantimes.com/world-news/mauritius-floods-mauritius-cyclone-cyclone-belal-mauritius-rainfall-mauritius-floods-videos-101705322329348.html">Cars swept away like toys as cyclone Belal causes havoc in Mauritius</a></p>
+</div>
+
 
 ## Abstract
 
@@ -350,6 +361,10 @@ Tracks are terminated after not being detected for a duration defined by "MAX_UN
 <a name="ds"></a>
 ## 4. Deep SORT: Simple Online and Realtime Tracking with a Deep Association Metric
 
+
+-------
+## Conclusion
+
 ----------------
 
 ## References
@@ -362,3 +377,4 @@ Tracks are terminated after not being detected for a duration defined by "MAX_UN
 7. https://www.youtube.com/watch?v=BLRSIwal7Go&list=PL2zRqk16wsdoYzrWStffqBAoUY8XdvatV&index=12&ab_channel=FirstPrinciplesofComputerVision
 8. https://learnopencv.com/object-tracking-and-reidentification-with-fairmot/
 9. https://cvhci.anthropomatik.kit.edu/~stiefel/papers/ECCV2006WorkshopCameraReady.pdf
+10. https://learnopencv.com/understanding-multiple-object-tracking-using-deepsort/
