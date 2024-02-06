@@ -361,7 +361,13 @@ Tracks are terminated after not being detected for a duration defined by "MAX_UN
 <a name="ds"></a>
 ## 4. Deep SORT: Simple Online and Realtime Tracking with a Deep Association Metric
 
+### 4.1 Track Handling and State Estimation
 
+### 4.2 Assignment Problem
+
+### 4.3 Matching Cascade
+
+### 4.4 Deep Appearance Descriptor
 -------
 ## Conclusion
 
