@@ -122,7 +122,16 @@ We want to track an object within a region of interest (ROI). However, the relia
 
 
 #### 2.3.2 Similarity Learning using Siamese Network
+SIFT detects and describes local features in images. However, when we have more than one object we need to track, we will need a more robust solution. In my other project, [**Face Recognition with Masks**](https://github.com/yudhisteer/Face-Recognition-with-Masks), I talked about how we could use a Siamese Network to do face recognition. 
 
+- The Siamese Network has **two identical networks** that share the same **architecture** and **weights**.
+- Each network takes an input and processes it **independently** to produce an **embedding** of the input data in a **latent space**.
+- To **train** the model, we use pairs of images containing the **same** person which would be labeled as **similar**, while pairs of images containing **different** people would be labeled as **dissimilar**.
+- We need to learn embeddings such that the distance (Euclidean distance, contrastive loss, or triplet loss) between embeddings of **similar** pairs is **minimized**, while the distance between embeddings of **dissimilar** pairs is **maximized**.
+- During **inference**, the Siamese network computes the **embeddings** for each input using the shared networks.
+- The **similarity** between the inputs is then determined based on the **distance** between their embeddings in the embedding space.
+
+In the image below we see how when applying a Siamese network, it tells us which car in frame ```t-1``` is matching to which one in frame ```t```. In that way, we will be able to model the appearance of each object and track its trajectory in subsequent frames.
 
 <p align="center">
   <img src="https://github.com/yudhisteer/Real-time-Ego-Tracking-A-Tactical-Solution-for-Rescue-Operations/assets/59663734/cd85c8a9-1bf8-4a8f-a695-a1495eecfe63" width="90%" />
