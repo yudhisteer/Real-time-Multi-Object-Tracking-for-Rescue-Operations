@@ -25,11 +25,27 @@ After watching distressing footage online showing people **trapped** atop their 
 ------------
 <a name="od"></a>
 ## 1. Object Detection
+Before we talk about object tracking let's talk about the two main categories of object detection models: **one** and **two-stage detectors**.
 
+### 1.1 Two-Stage Detectors
 
-Now that we know what is object detection, why do we need tracking? We need to model the **temporal** aspect of objects. That is, when detection fails due to occlusion or other factors, we want to atleast have an idea where the object might be. Then, we do not only want to detect the object but be able to predict the trajectory in the future. 
+- It consists of two separate modules: **Region Proposal Network (RPN)** and a **Classification Network**.
+- RPN suggests a collection of **regions of interest** that are likely to contain an object.
+- The classification network then **classifies** the proposals and **refines** their bounding boxes.
+- Two-stage detectors are **accurate**, especially for detecting small objects but **slower** than one-stage detectors.
+- Examples: Models in the R-CNN family, SPP-Net, FPN...
 
-Once we have a set of detections per frame that we have found independently for each frame, the actual task is to find the detections that match from one frame to another and to form a trajectoy.
+### 1.2 One-Stage Detectors
+
+- They perform object detection in a **single pass** through the network, without explicitly generating region proposals.
+- The image is divided into a grid, and each grid cell predicts **bounding boxes** and **class probabilities** directly.
+- One-stage detectors are **simpler** and **faster** because they do not need a separate region proposal stage.
+- Used in real-time applications but may sacrifice some accuracy, especially for small objects.
+- Examples: YOLO (You Only Look Once), SSD (Single Shot MultiBox Detector).
+
+Now that we know what is object detection, why do we need tracking? We need to model the **temporal** aspect of objects. That is, when detection fails due to occlusion or other factors, we want to at least know where the object might be. Then, we do not only want to detect the object but also be able to **predict** the trajectory in the future. 
+
+Once we have a set of detections per frame that we have found independently for each frame, the actual task is to find the detections that **match** from one frame to another and to form a **trajectory**.
 
 ------------
 <a name="ot"></a>
