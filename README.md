@@ -26,6 +26,11 @@ After watching distressing footage online showing people **trapped** atop their 
 <a name="od"></a>
 ## 1. Object Detection
 
+
+Now that we know what is object detection, why do we need tracking? We need to model the **temporal** aspect of objects. That is, when detection fails due to occlusion or other factors, we want to atleast have an idea where the object might be. Then, we do not only want to detect the object but be able to predict the trajectory in the future. 
+
+Once we have a set of detections per frame that we have found independently for each frame, the actual task is to find the detections that match from one frame to another and to form a trajectoy.
+
 ------------
 <a name="ot"></a>
 ## 2. Object Tracking
