@@ -381,6 +381,7 @@ Tracks are terminated after not being detected for a duration defined by "MAX_UN
 --------------
 <a name="ds"></a>
 ## 4. Deep SORT: Simple Online and Realtime Tracking with a Deep Association Metric
+With SORT, we were able to model our target's **motion**. That is, predict where the target is and will be. But now, we also want to model our target's **appearance**. That is, what our target looks like. Hence, the author of the DeepSORT paper combines **appearance information** to track objects over a **longer period** even when they are **occluded**, and to **reduce** the number of **identity switches**.  
 
 ### 4.1 Track Handling and State Estimation
 
