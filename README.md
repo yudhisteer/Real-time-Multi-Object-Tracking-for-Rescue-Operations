@@ -437,6 +437,15 @@ def metric_total_feature(bbox1: Tuple[int, int, int, int],
     print("Cosine result shape: ", cosine_result.shape)
 ```
 
+```python
+    # Association
+    match_indices, matches, unmatched_detections, unmatched_trackers = association(tracks=bboxs[0],
+                                                                                   detections=bboxs[1],
+                                                                                   metric_function=metric_total_feature,
+                                                                                   old_features=features_1,
+                                                                                   new_features=features_2)
+```
+
 In summary, DeepSORT uses an association metric that combines both **motion** and **appearance** descriptors. DeepSORT can be defined as the tracking algorithm that tracks objects not only based on motion but also on their appearance. 
 
 -------
