@@ -393,12 +393,39 @@ Tracks are terminated after not being detected for a duration defined by "MAX_UN
 With SORT, we were able to model our target's **motion**. That is, predict where the target is and will be. But now, we also want to model our target's **appearance**. That is, what our target looks like. Hence, the author of the DeepSORT paper combines **appearance information** to track objects over a **longer period** even when they are **occluded**, and to **reduce** the number of **identity switches**.  
 
 ### 4.1 Track Handling and State Estimation
+The authors use a **constant velocity** motion and **linear observation model** such that they take the bounding box coordinates of the object as input parameters. For each track, we track the number of frames since the last successful measurement association. Tracks exceeding a maximum age are removed. New tracks are initiated for unassociated detections. If no successful association is made within the first three frames, these tracks are deleted.
 
 ### 4.2 Assignment Problem
+Similar to SORT, they use the Hungarian algorithm for the association between the predicted Kalman states and the measurements. However, this time they integrate motion and appearance into their cost function metric. They use the **Mahalanobis distance** to inform about potential object locations based on motion which helps short-term predictions. But also the **cosine distance** which incorporates appearance information for identity recovery during long-term occlusions when motion information is less reliable. This combination allows for **robust association**. In my implementation, I used a weighted combination of IoU, Sanchez-Matilla, Yu, and cosine similarity such that we have an association if it is within a certain threshold.
+
+```python
+def metric_total_feature(bbox1: Tuple[int, int, int, int],
+                         bbox2: Tuple[int, int, int, int],
+                         old_features: np.ndarray,
+                         new_features: np.ndarray,
+                         iou_threshold: float = 0.6,
+                         sm_threshold: float = 1e-10,
+                         yu_threshold: float = 0.5,
+                         feature_threshold: float = 0.98):
+
+    iou_cost = metric_IOU(bbox1, bbox2)
+    sm_cost = metric_sanchez_matilla(bbox1, bbox2)
+    feature_cost = cosine_similarity(old_features, new_features)[0][0]
+    yu_cost = metric_yu(bbox1, bbox2, old_features, new_features)
+
+    # Condition
+    if iou_cost > iou_threshold and feature_cost > feature_threshold and sm_cost > sm_threshold and yu_cost > yu_threshold:
+        return iou_cost
+    # Condition not met
+    return 0
+```
 
 ### 4.3 Matching Cascade
 
 ### 4.4 Deep Appearance Descriptor
+
+In summary, DeepSORT uses an association metric that combines both **motion** and **appearance** descriptors. DeepSORT can be defined as the tracking algorithm that tracks objects not only based on motion but also on their appearance. 
+
 -------
 ## Conclusion
 
