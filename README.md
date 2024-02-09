@@ -424,6 +424,19 @@ def metric_total_feature(bbox1: Tuple[int, int, int, int],
 
 ### 4.4 Deep Appearance Descriptor
 
+```python
+    # Extract Features
+    siamese_model = torch.load("model640.pt", map_location=torch.device('cpu'))
+    siamese_model = siamese_model.eval()
+
+    features_1 = extract_features(model=siamese_model, crop_tensor=crop_tensor_1)
+    print("Feature 1 shape: ", features_1.shape)
+    features_2 = extract_features(model=siamese_model, crop_tensor=crop_tensor_2)
+    print("Feature 2 shape: ", features_2.shape)
+    cosine_result = cosine_similarity(features_1, features_2)
+    print("Cosine result shape: ", cosine_result.shape)
+```
+
 In summary, DeepSORT uses an association metric that combines both **motion** and **appearance** descriptors. DeepSORT can be defined as the tracking algorithm that tracks objects not only based on motion but also on their appearance. 
 
 -------
