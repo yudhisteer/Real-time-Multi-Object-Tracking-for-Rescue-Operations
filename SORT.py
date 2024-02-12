@@ -111,15 +111,15 @@ def tracking_SORT(image: List[int]) -> Tuple[List[int], List[List[int]]]:
         age = old_obstacles[index[0]].age + 1
         # Create an obstacle based on id of old obstacle and bounding box of new detection
         obstacle = ObstacleSORT(id=id, bbox=detection_bbox, age=age, time=current_time)
-        # UPDATE
-        measurement = new_detections_bbox[index[1]]
-        obstacle.kf.update(np.array(measurement))
         # PREDICTION
         F = state_transition_matrix(current_time - obstacle.time)
         obstacle.kf.F = F
         obstacle.kf.predict()
         obstacle.time = current_time
         obstacle.bbox = [int(obstacle.kf.x[0]), int(obstacle.kf.x[2]), int(obstacle.kf.x[4]), int(obstacle.kf.x[6])]
+        # UPDATE
+        measurement = new_detections_bbox[index[1]]
+        obstacle.kf.update(np.array(measurement))
         # Append obstacle to new obstacles list
         new_obstacles.append(obstacle)
 
