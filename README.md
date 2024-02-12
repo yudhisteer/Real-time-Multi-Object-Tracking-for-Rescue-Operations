@@ -405,7 +405,7 @@ With SORT, we were able to model our target's **motion**. That is, predict where
 The authors use a **constant velocity** motion and **linear observation model** such that they take the bounding box coordinates of the object as input parameters. For each track, we track the number of frames since the last successful measurement association. Tracks exceeding a maximum age are removed. New tracks are initiated for unassociated detections. If no successful association is made within the first three frames, these tracks are deleted.
 
 ### 4.2 Assignment Problem
-Similar to SORT, they use the Hungarian algorithm for the association between the predicted Kalman states and the measurements. However, this time they integrate motion and appearance into their cost function metric. They use the **Mahalanobis distance** to inform about potential object locations based on motion which helps short-term predictions. But also the **cosine distance** which incorporates appearance information for identity recovery during long-term occlusions when motion information is less reliable. This combination allows for **robust association**. In my implementation, I used a weighted combination of IoU, Sanchez-Matilla, Yu, and cosine similarity such that we have an association if it is within a certain threshold.
+Similar to SORT, they use the Hungarian algorithm for the association between the predicted Kalman states and the measurements. However, this time they integrate motion and appearance into their cost function metric. They use the **Mahalanobis distance** to inform about potential object locations based on motion which helps short-term predictions. But also the **cosine distance** which incorporates appearance information for identity recovery during long-term occlusions when motion information is less reliable. This combination allows for **robust association**. In my implementation, I used a weighted combination of **IoU**, **Sanchez-Matilla**, **Yu**, and **cosine similarity** such that we have an association if it is within a certain threshold.
 
 ```python
 def metric_total_feature(bbox1: Tuple[int, int, int, int],
@@ -430,8 +430,10 @@ def metric_total_feature(bbox1: Tuple[int, int, int, int],
 ```
 
 ### 4.3 Matching Cascade
+The matching cascade in Deep SORT is a two-stage process for associating detections with existing tracks. In the first stage, simple distance metrics quickly identify potential matches between detections and tracks. The second stage refines these matches using the Hungarian algorithm using the IoU metric. This cascade ensures **accurate** and **robust tracking** by maintaining track identities and handling occlusions effectively. For my implementation, I used the Hungarian algorithm only.
 
 ### 4.4 Deep Appearance Descriptor
+As mentioned before, we want to model the **appearance** of objects. We first **detect** the objects using YOLOv8 and then **cropped** the objects at their bounding boxes. We use a **Siamese** network to process the **features** of the cropped objects with the shape: ```[#Channels, 128, 128]```. For each object's features in frame ```t-1``` we use a **cosine similarity** to associate to objects' features in frame ```t```.
 
 ```python
     # Extract Features
