@@ -14,6 +14,15 @@ After watching distressing footage online showing people **trapped** atop their 
 
 
 ## Abstract
+This project involves finding a solution for emergency responders to track people trapped in times of disasters like cyclones, flash floods, or earthquakes. The proposed system will utilize surveillance cameras, drones, or other relevant sources to continuously monitor affected areas and track the movements of individuals in real-time. I show how to design tracking algorithms like **SORT** from scratch which uses the **Hungarian** algorithm for the **association** of tracks and the **Kalman Filter** to model the motion of objects of interest. However, due to poor results during occlusion and a high number of identity switches, I then demonstrate how to implement the **Deep SORT** algorithm which not only models the **motion** but also the **appearance** of objects using a **Siamese** network. The goal of this project is to help disaster response teams by improving their awareness, and coordination, and ultimately, saving lives during emergencies.
+
+
+<div style="text-align: center;">
+  <video src="https://github.com/yudhisteer/Real-time-Multi-Object-Tracking-for-Rescue-Operations/assets/59663734/d480ba65-4825-46c3-a200-f7e3d9b00b9c" controls="controls" style="max-width: 730px;">
+  </video>
+</div>
+
+
 
 ## Table of Contents
 1. [Object Detection](#od)
@@ -450,6 +459,12 @@ In summary, DeepSORT uses an association metric that combines both **motion** an
 
 -------
 ## Conclusion
+Below is the result of Deep SORT on footage during the cyclone in Mauritius. We can easily **count** the number of people in the danger areas and **track** their movements when they are being carried away by powerful tides. Although this project shows the implementation of SORT and Deep SORT from scratch, we have more cutting-edge obstacle-tracking algorithms such as **CenterTrack**, **ByteTrack**, **FairMOT**, **Strong SORT**, and so on. 
+
+<div style="text-align: center;">
+  <video src="https://github.com/yudhisteer/Real-time-Multi-Object-Tracking-for-Rescue-Operations/assets/59663734/d480ba65-4825-46c3-a200-f7e3d9b00b9c" controls="controls" style="max-width: 730px;">
+  </video>
+</div>
 
 ----------------
 
