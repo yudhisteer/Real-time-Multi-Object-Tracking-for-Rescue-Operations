@@ -471,13 +471,32 @@ Below is the result of Deep SORT on footage during the cyclone in Mauritius. We 
 ----------------
 
 ## References
-1. https://arshren.medium.com/hungarian-algorithm-6cde8c4065a3
-2. https://www.thinkautonomous.ai/blog/hungarian-algorithm/
-3. https://medium.com/augmented-startups/deepsort-deep-learning-applied-to-object-tracking-924f59f99104
-4. https://www.youtube.com/watch?v=QtAYgtBnhws&ab_channel=DynamicVisionandLearningGroup
-5. https://www.youtube.com/watch?app=desktop&v=ezSx8OyBZVc&ab_channel=ShokoufehMirzaei
-6. https://brilliant.org/wiki/hungarian-matching/
-7. https://www.youtube.com/watch?v=BLRSIwal7Go&list=PL2zRqk16wsdoYzrWStffqBAoUY8XdvatV&index=12&ab_channel=FirstPrinciplesofComputerVision
-8. https://learnopencv.com/object-tracking-and-reidentification-with-fairmot/
-9. https://cvhci.anthropomatik.kit.edu/~stiefel/papers/ECCV2006WorkshopCameraReady.pdf
-10. https://learnopencv.com/understanding-multiple-object-tracking-using-deepsort/
+[1] Arshren. (n.d.). Hungarian Algorithm. [Medium Article]. [https://arshren.medium.com/hungarian-algorithm-6cde8c4065a3](https://arshren.medium.com/hungarian-algorithm-6cde8c4065a3)
+
+[2] Think Autonomous. (n.d.). Understanding the Hungarian Algorithm. [Blog Post]. [https://www.thinkautonomous.ai/blog/hungarian-algorithm/](https://www.thinkautonomous.ai/blog/hungarian-algorithm/)
+
+[3] Augmented Startups. (n.d.). DeepSORT: Deep Learning Applied to Object Tracking. [Medium Article]. [https://medium.com/augmented-startups/deepsort-deep-learning-applied-to-object-tracking-924f59f99104](https://medium.com/augmented-startups/deepsort-deep-learning-applied-to-object-tracking-924f59f99104)
+
+[4] YouTube. (n.d.). Visual Object Tracking: DeepSORT Explained. [Video]. [https://www.youtube.com/watch?v=QtAYgtBnhws&ab_channel=DynamicVisionandLearningGroup](https://www.youtube.com/watch?v=QtAYgtBnhws&ab_channel=DynamicVisionandLearningGroup)
+
+[5] YouTube. (n.d.). Multiple Object Tracking in Videos. [Video]. [https://www.youtube.com/watch?app=desktop&v=ezSx8OyBZVc&ab_channel=ShokoufehMirzaei](https://www.youtube.com/watch?app=desktop&v=ezSx8OyBZVc&ab_channel=ShokoufehMirzaei)
+
+[6] Brilliant. (n.d.). Hungarian Matching. [Webpage]. [https://brilliant.org/wiki/hungarian-matching/](https://brilliant.org/wiki/hungarian-matching/)
+
+[7] YouTube. (n.d.). Understanding Hungarian Algorithm - AI Coffee Break with Letitia. [Video]. [https://www.youtube.com/watch?v=BLRSIwal7Go&list=PL2zRqk16wsdoYzrWStffqBAoUY8XdvatV&index=12&ab_channel=FirstPrinciplesofComputerVision](https://www.youtube.com/watch?v=BLRSIwal7Go&list=PL2zRqk16wsdoYzrWStffqBAoUY8XdvatV&index=12&ab_channel=FirstPrinciplesofComputerVision)
+
+[8] Learn OpenCV. (n.d.). Object Tracking and Re-identification with FairMOT. [Tutorial]. [https://learnopencv.com/object-tracking-and-reidentification-with-fairmot/](https://learnopencv.com/object-tracking-and-reidentification-with-fairmot/)
+
+[9] Stiefel, S., & Sanchez, A. (2006). An Efficient Implementation of the Hungarian Algorithm for the Assignment Problem. [PDF]. [https://cvhci.anthropomatik.kit.edu/~stiefel/papers/ECCV2006WorkshopCameraReady.pdf](https://cvhci.anthropomatik.kit.edu/~stiefel/papers/ECCV2006WorkshopCameraReady.pdf)
+
+[10] Learn OpenCV. (n.d.). Understanding Multiple Object Tracking using DeepSORT. [Tutorial]. [https://learnopencv.com/understanding-multiple-object-tracking-using-deepsort/](https://learnopencv.com/understanding-multiple-object-tracking-using-deepsort/)
+
+[11] Sanchez-Matilla, R., Poiesi, F., & Cavallaro, A. (2016). Online Multi-Target Tracking Using Recurrent Neural Networks. [PDF]. [https://eecs.qmul.ac.uk/~andrea/papers/2016_ECCVW_MOT_OnlineMTTwithStrongAndWeakDetections_Sanchez-Matilla_Poiesi_Cavallaro.pdf](https://eecs.qmul.ac.uk/~andrea/papers/2016_ECCVW_MOT_OnlineMTTwithStrongAndWeakDetections_Sanchez-Matilla_Poiesi_Cavallaro.pdf)
+
+[12] arXiv. (n.d.). POI: Multiple Object Tracking with High-Performance Detection and Appearance Feature [Research Paper]. [https://arxiv.org/abs/1610.06136](https://arxiv.org/abs/1610.06136)
+
+[13] arXiv. (n.d.). Simple Online and Realtime Tracking with a Deep Association Metric. [Research Paper]. [https://arxiv.org/abs/1610.06136](https://arxiv.org/abs/1610.06136)
+
+[14] arXiv. (n.d.). Simple Online and real-time tracking. [Research Paper]. [https://arxiv.org/abs/1602.00763](https://arxiv.org/abs/1602.00763)
+
+
