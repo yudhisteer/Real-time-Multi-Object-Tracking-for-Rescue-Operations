@@ -1,7 +1,7 @@
 # Real-time Multi-Object Tracking for Rescue Operations
 
 ## Problem Statement
-On January 16th, 2024, a tropical storm, **Belal**, hit close to the southern coast of **Mauritius** and was now heading eastwards out into the Indian Ocean. At least **one person has died** from the powerful winds and rains of the cyclone. On the nearby French island of **Réunion**, thousands of residents remain without **power** and **water outages** following the cyclone's impact the day before. Seeing the calamity that the cyclone has done to my country, Mauritius, I wanted to investigate how I could use my computer vision knowledge to help the **authorities**. 
+On January 16th, 2024, a tropical storm, **Belal**, hit close to the southern coast of **Mauritius** and was now heading eastwards out into the Indian Ocean. At least **one person has died** from the powerful winds and rains of the cyclone. On the nearby French island of **Réunion**, thousands of residents remained without **power** and **water outages** for days. Seeing the calamity that the cyclone has caused to my home island, Mauritius, I wanted to investigate how I could use my computer vision knowledge to help the **authorities**. 
 
 After watching distressing footage online showing people **trapped** atop their cars amidst floods, as described vividly by Hindustan Times as "**Cars swept away like toys**," I recognized the urgent need for authorities to **track** and **assess** the number of individuals in need of **rescue**. In the chaotic scenario of people stuck in cars drifting in floodwaters, it's crucial to accurately track each person's **location** for successful rescue operations.
 
