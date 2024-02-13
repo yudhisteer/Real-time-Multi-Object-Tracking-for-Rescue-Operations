@@ -31,7 +31,7 @@ This project involves finding a solution for emergency responders to track peopl
 4. [SORT: Simple Online Realtime Tracking](#s)
 5. [Deep SORT: Simple Online and Realtime Tracking with a Deep Association Metric](#ds)
 
-------------
+----------------
 <a name="od"></a>
 ## 1. Object Detection
 Before we talk about object tracking let's talk about the two main categories of object detection models: **one** and **two-stage detectors**.
